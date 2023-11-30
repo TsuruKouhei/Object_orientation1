@@ -19,7 +19,6 @@ customer = Customer.new(gets.chomp)
 
 puts "🏧 ウォレットにチャージする金額を入力にしてください"
 customer.wallet.deposit(gets.chomp.to_i)
-
 puts "🛍️ ショッピングを開始します"
 end_shopping = false
 while !end_shopping do
@@ -33,9 +32,7 @@ while !end_shopping do
   quantity = gets.to_i
 
   items = seller.pick_items(number, quantity)
-
   items&.each{|item| customer.cart.add(item) }
-
   puts "🛒 カートの中身"
   customer.cart.items_list
   puts "🤑 合計金額: #{customer.cart.total_amount}"

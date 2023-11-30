@@ -1,8 +1,9 @@
+require_relative "ownable"
 class Item
   attr_reader :name, :price
 
   @@instances = []
-
+  include Ownable
   def initialize(name, price, owner=nil)
     @name = name
     @price = price
